@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Dog
+from django.views.generic.edit import CreateView
 
 # Create your views here.
 
@@ -25,4 +26,8 @@ class Dog_List(TemplateView):
             context["header"] = "All Our Dogs"
         return context
 
-
+class Dog_Create(CreateView):
+    model = Dog
+    fields = ["name", "img", "age", "gender"]
+    template_name = "dog_create.html"
+    success_url = '/dogs/'
