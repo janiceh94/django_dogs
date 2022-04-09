@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Dog
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
+from django.urls import reverse
 
 # Create your views here.
 
@@ -31,8 +32,16 @@ class Dog_Create(CreateView):
     model = Dog
     fields = ["name", "img", "age", "gender"]
     template_name = "dog_create.html"
-    success_url = '/dogs/'
+    def get_success_url(self):
+        return reverse('dog_detail', kwargs={'pk': self.object.pk})
 
 class Dog_Detail(DetailView):
     model = Dog
     template_name = "dog_detail.html"
+
+class Dog_Update(UpdateView):
+    model = Dog
+    fields = ["name", "img", "age", "gender"]
+    template_name = 'dog_update.html'
+    def get_success_url(self):
+        return reverse('dog_detail', kwargs={'pk': self.object.pk})
