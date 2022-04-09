@@ -5,6 +5,8 @@ from .models import Dog
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
+from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -32,8 +34,11 @@ class Dog_Create(CreateView):
     model = Dog
     fields = ["name", "img", "age", "gender"]
     template_name = "dog_create.html"
-    def get_success_url(self):
-        return reverse('dog_detail', kwargs={'pk': self.object.pk})
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect('/dogs')
 
 class Dog_Detail(DetailView):
     model = Dog
@@ -50,3 +55,8 @@ class Dog_Delete(DeleteView):
     model = Dog
     template_name = 'dog_delete.html'
     success_url = '/dogs/'
+
+def profile(request, username):
+    user = User.objects.get(username=username)
+    dogs = Dog.objects.filter(user=user)
+    return render(request, 'profile.html', {'username': username, 'dogs': dogs})

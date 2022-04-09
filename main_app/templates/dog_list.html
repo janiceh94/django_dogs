@@ -21,5 +21,8 @@
         </a>
         <h3>Age: {{dog.age}}</h3>
         <h3>Gender: {{dog.gender}}</h3>
+        <p>Adopted By: 
+            <a href='/user/{{dog.user.username}}'>{{dog.user.username}}</a>
+        </p>
     {% endfor %}
 {% endblock %}
