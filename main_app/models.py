@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 
 GENDER_CHOICES = (
-    ("f", "female"),
-	("m", "male")
+    ("female", "female"),
+	("male", "male")
 )
 
 class Dog(models.Model):

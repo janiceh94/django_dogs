@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Dog
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 
 # Create your views here.
 
@@ -31,3 +32,7 @@ class Dog_Create(CreateView):
     fields = ["name", "img", "age", "gender"]
     template_name = "dog_create.html"
     success_url = '/dogs/'
+
+class Dog_Detail(DetailView):
+    model = Dog
+    template_name = "dog_detail.html"
