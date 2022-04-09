@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Dog
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
 
@@ -45,3 +45,8 @@ class Dog_Update(UpdateView):
     template_name = 'dog_update.html'
     def get_success_url(self):
         return reverse('dog_detail', kwargs={'pk': self.object.pk})
+
+class Dog_Delete(DeleteView):
+    model = Dog
+    template_name = 'dog_delete.html'
+    success_url = '/dogs/'
