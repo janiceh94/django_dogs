@@ -5,14 +5,14 @@
 {% endblock %}
 
 {% block body %}
-<a href="{% url 'dog_create' %}">Add a Dog</a>
     <form>
         <div>
-            <input type="text" name="name" placeholder="name"/>
+            <input type="text" name="name" placeholder="Name of dog"/>
             <input type="submit" value="Search"/>
         </div>
         <a href="{% url 'dog_list' %}">All Dogs</a>
     </form>
+    <a href="{% url 'dog_create' %}">Add A Dog</a>
     <h1>{{header}}</h1>
     {% for dog in dogs %}
         <img src="{{dog.img}}" alt="{{dog.name}}">
