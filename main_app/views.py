@@ -19,8 +19,10 @@ class Dog_List(TemplateView):
         name = self.request.GET.get("name")
         if name != None:
             context["dogs"] = Dog.objects.filter(name__icontains=name)
+            context["header"] = f"Searching for {name}"
         else:
             context["dogs"] = Dog.objects.all()
+            context["header"] = "All Our Dogs"
         return context
 
 

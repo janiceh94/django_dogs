@@ -12,7 +12,7 @@
         </div>
         <a href="{% url 'dog_list' %}">All Dogs</a>
     </form>
-    <h1>Dogs:</h1>
+    <h1>{{header}}</h1>
     {% for dog in dogs %}
         <img src="{{dog.img}}" alt="{{dog.name}}">
         <h3>Name: {{dog.name}}</h3>
