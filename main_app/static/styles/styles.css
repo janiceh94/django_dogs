@@ -1,0 +1,21 @@
+nav a{
+    padding: 20px;
+    text-decoration: none;
+}
+
+img{
+    width:  150px;
+    height: 150px;
+    align-items: center;
+}
+
+body{
+    margin: auto;
+    width: 640px;
+    padding: 50px;
+    text-align: center;
+}
+
+.dogName, .userName{
+    text-decoration: none;
+}
