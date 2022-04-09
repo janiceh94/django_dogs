@@ -16,7 +16,11 @@ class Dog_List(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["dogs"] = Dog.objects.all()
+        name = self.request.GET.get("name")
+        if name != None:
+            context["dogs"] = Dog.objects.filter(name__icontains=name)
+        else:
+            context["dogs"] = Dog.objects.all()
         return context
 
 
