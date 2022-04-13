@@ -17,10 +17,11 @@
 <body>
     <nav>
         <a href='/dogs'>All Dogs</a>
-        <a href='/admin'>Admin</a>
-        <a href='/user/{{user.username}}'>Profile</a>
+        <a href='/dogs/new'>Add a Dog</a>
         <a href='/dogtoys'>Dog Toys</a>
         <a href='/dogtoys/create'>Add Toys</a>
+        <a href='/user/{{user.username}}'>Profile</a>
+        <a href='/admin'>Admin</a>
     </nav>
     {% block body %}
     {% endblock %}

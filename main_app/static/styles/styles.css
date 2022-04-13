@@ -23,3 +23,9 @@ body{
 .capitalize{
     text-transform: capitalize;
 }
+
+.mainPic{
+    width:  500px;
+    height: 500px;
+    align-items: center;
+}
