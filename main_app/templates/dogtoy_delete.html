@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>Delete Dog Toy</h1>
+
+    <h4>Are you sure you want to DELETE {{ dogtoy }}?</h4>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+        <a class='link' href="{% url 'dogtoys_show' dogtoy.id %}">Cancel</a>
+    </form>
+{% endblock %}

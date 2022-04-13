@@ -32,7 +32,7 @@ class Dog_List(TemplateView):
 
 class Dog_Create(CreateView):
     model = Dog
-    fields = ["name", "img", "age", "gender"]
+    fields = ["name", "img", "age", "gender", 'dogtoys']
     template_name = "dog_create.html"
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -46,7 +46,7 @@ class Dog_Detail(DetailView):
 
 class Dog_Update(UpdateView):
     model = Dog
-    fields = ["name", "img", "age", "gender"]
+    fields = ["name", "img", "age", "gender", 'dogtoys']
     template_name = 'dog_update.html'
     def get_success_url(self):
         return reverse('dog_detail', kwargs={'pk': self.object.pk})

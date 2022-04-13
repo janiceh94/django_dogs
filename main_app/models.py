@@ -21,6 +21,7 @@ class Dog(models.Model):
     gender = models.CharField(max_length=10, choices = GENDER_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    dogtoys = models.ManyToManyField(DogToy)
 
     def __str__(self):
         return self.name

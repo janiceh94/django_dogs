@@ -10,10 +10,18 @@
 <div>
     <h3>Age: {{dog.age}}</h3>
     <h3>Gender: {{dog.gender}}</h3>
+    <h3> Toys: </h3>
+    <ul class='capitalize'>
+        {% for dogtoy in dog.dogtoys.all %}
+            <li style='list-style: none;'>{{dogtoy.name}}</li>
+        {% empty %}
+            <div>Has no toys</div>
+        {% endfor %}
+    </ul>   
 </div>
 <div>
-    <a href="{% url 'dog_update' dog.pk %}">Update</a>
-    <a href="{% url 'dog_delete' dog.pk %}">Delete</a>
+    <a class ='link' href="{% url 'dog_update' dog.pk %}">Update</a>
+    <a class ='link' href="{% url 'dog_delete' dog.pk %}">Delete</a>
 </div>
 
 {% endblock %}

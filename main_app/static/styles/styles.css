@@ -16,6 +16,10 @@ body{
     text-align: center;
 }
 
-.dogName, .userName{
+.dogName, .userName, .link{
     text-decoration: none;
+}
+
+.capitalize{
+    text-transform: capitalize;
 }

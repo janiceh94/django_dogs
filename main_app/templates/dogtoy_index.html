@@ -5,10 +5,9 @@
 
 {% for dogtoy in dogtoys %}
     <div>
-        <a href="{% url 'dogtoys_show' dogtoy.id %}">
+        <a class='link' href="{% url 'dogtoys_show' dogtoy.id %}">
             <div>
-                <span>{{ dogtoy.name }}</span>
-                <p>Color: {{ dogtoy.color }}</p>
+                <h3 class='capitalize'>{{ dogtoy.name }}</h3>
             </div>
         </a>
     </div>

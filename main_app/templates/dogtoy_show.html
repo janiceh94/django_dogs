@@ -5,7 +5,7 @@
 
 <div>
     <div>
-        <span>{{ dogtoy.name }}</span>
+        <span class='capitalize'>{{ dogtoy.name }}</span>
         <p>Color: {{ dogtoy.color }}</p>
         {% for dog in dogtoy.dog_set.all %}
         <p>Owned by: {{dog.name}}</p>
@@ -14,8 +14,8 @@
         {% endfor %}
     </div>
     <div>
-        <a href="{% url 'dogtoys_update' cattoy.id %}">Edit</a>
-        <a href="{% url 'dogtoys_delete' cattoy.id %}">Delete</a>
+        <a class ='link' href="{% url 'dogtoys_update' dogtoy.id %}">Edit</a>
+        <a class ='link' href="{% url 'dogtoys_delete' dogtoy.id %}">Delete</a>
     </div>
 </div>
 {% endblock %}
