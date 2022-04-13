@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>Dog Toy Details</h1>
+
+<div>
+    <div>
+        <span>{{ dogtoy.name }}</span>
+        <p>Color: {{ dogtoy.color }}</p>
+        {% for dog in dogtoy.dog_set.all %}
+        <p>Owned by: {{dog.name}}</p>
+        {% empty %}
+            <p>Nobody plays with this toy</p>
+        {% endfor %}
+    </div>
+    <div>
+        <a href="{% url 'dogtoys_update' cattoy.id %}">Edit</a>
+        <a href="{% url 'dogtoys_delete' cattoy.id %}">Delete</a>
+    </div>
+</div>
+{% endblock %}
