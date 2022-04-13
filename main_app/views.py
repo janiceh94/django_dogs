@@ -63,9 +63,9 @@ def profile(request, username):
 
 def dogtoys_index(request):
     dogtoys = DogToy.objects.all()
-    return render (request, 'dogtoys_index.html', {'dogtoys': dogtoys})
+    return render (request, 'dogtoy_index.html', {'dogtoys': dogtoys})
 
-def dogtoys_create(request, dogtoy_id):
+def dogtoys_show(request, dogtoy_id):
     dogtoy = DogToy.objects.get(id=dogtoy_id)
     return render(request, 'dogtoy_show.html', {'dogtoy': dogtoy})
 
