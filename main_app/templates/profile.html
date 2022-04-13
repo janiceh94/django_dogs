@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block body %}
 
-<h1>{{ username }}'s collection:</h1>
+<h1 class='capitalize'>{{ username }}'s Dogs:</h1>
 
 {% for dog in dogs %}
-<a href="/dogs/{{ dog.id }}">
+<a class ='link' href="/dogs/{{ dog.id }}">
   <h3>{{ dog.name }}</h3>
 </a>
 

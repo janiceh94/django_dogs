@@ -11,6 +11,7 @@ urlpatterns = [
     path('dogs/<int:pk>/', views.Dog_Detail.as_view(), name="dog_detail"),
     path('dogs/<int:pk>/update', views.Dog_Update.as_view(), name = 'dog_update'),
     path('dogs/<int:pk>delete', views.Dog_Delete.as_view(), name="dog_delete"),
+    
     path('user/<username>', views.profile, name='profile'),
     # dog toys
     path('dogtoys/', views.dogtoys_index, name='dogtoys_index'),
