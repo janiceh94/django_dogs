@@ -16,6 +16,13 @@
 </head>
 <body>
     <nav>
+        {% if user.is_authenticated %}
+            <a href="/user/{{user.username}}">Hello, {{user.username}}!</a>
+            <a href="/accounts/logout">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <span><a href="{% url 'signup' %}">SignUp</a></span>
+        {% endif %}
         <a href='/dogs'>All Dogs</a>
         <a href='/dogs/new'>Add a Dog</a>
         <a href='/dogtoys'>Dog Toys</a>

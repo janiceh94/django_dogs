@@ -1,5 +1,5 @@
 nav a{
-    padding: 20px;
+    padding: 10px;
     text-decoration: none;
 }
 
@@ -11,7 +11,7 @@ img{
 
 body{
     margin: auto;
-    width: 640px;
+    width:100%;
     padding: 50px;
     text-align: center;
 }
